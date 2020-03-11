@@ -1,0 +1,246 @@
+###############################################################################
+#
+# IAR ELF Linker V8.22.1.15669/W32 for ARM                31/Dec/2019  15:09:42
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Exe\测试架单片机程序.out
+#    Map file     =  
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\List\测试架单片机程序.map
+#    Command line =  
+#        -f C:\Users\Creat\AppData\Local\Temp\EW93C7.tmp
+#        (D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\application.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\main.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\misc.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\OLED.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32_eth.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32f10x_adc.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32f10x_dma.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32f10x_gpio.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32f10x_rcc.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32f10x_spi.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\stm32f10x_tim.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_adc.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_dma.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_ethernet.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_gpio.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_rcc.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_spi.o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj\user_timer.o
+#        -o
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Exe\测试架单片机程序.out
+#        --map
+#        D:\工作\测试架\程序\测试架单片机程序\Project\Debug\List\测试架单片机程序.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\arm\config\linker\ST\stm32f107xC.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0803ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 4K, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x2000ffff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind        Address    Size  Object
+  -------   ----        -------    ----  ------
+"A0":                              0x40
+  .intvec   ro code  0x08000000    0x40  vector_table_M.o [4]
+                   - 0x08000040    0x40
+
+"P1":                             0xbc4
+  .text     ro code  0x08000040   0x304  stm32f10x_rcc.o [1]
+  .text     ro code  0x08000344   0x2ec  stm32f10x_tim.o [1]
+  .text     ro code  0x08000630   0x164  stm32f10x_gpio.o [1]
+  .text     ro code  0x08000794   0x10c  user_spi.o [1]
+  .text     ro code  0x080008a0    0x70  stm32f10x_spi.o [1]
+  .text     ro code  0x08000910    0x8a  OLED.o [1]
+  .text     ro code  0x0800099a     0x2  vector_table_M.o [4]
+  .text     ro code  0x0800099c    0x3a  application.o [1]
+  .text     ro code  0x080009d6    0x88  user_rcc.o [1]
+  .text     ro code  0x08000a60    0x4c  user_gpio.o [1]
+  .text     ro code  0x08000aac    0x7c  user_timer.o [1]
+  .text     ro code  0x08000b28    0x80  misc.o [1]
+  .text     ro code  0x08000ba8    0x1e  cmain.o [4]
+  .text     ro code  0x08000bc6     0x4  low_level_init.o [3]
+  .text     ro code  0x08000bcc     0x8  main.o [1]
+  .text     ro code  0x08000bd4     0x4  exit.o [3]
+  .text     ro code  0x08000bd8     0xa  cexit.o [4]
+  .text     ro code  0x08000be4    0x14  exit.o [5]
+  .text     ro code  0x08000bf8     0xc  cstartup_M.o [4]
+                   - 0x08000c04   0xbc4
+
+"P2":                            0x1000
+  CSTACK             0x20000000  0x1000  <Block>
+    CSTACK  uninit   0x20000000  0x1000  <Block tail>
+                   - 0x20001000  0x1000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  rw data
+    ------            -------  -------
+D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj: [1]
+    OLED.o                138
+    application.o          58
+    main.o                  8
+    misc.o                128
+    stm32f10x_gpio.o      356
+    stm32f10x_rcc.o       772
+    stm32f10x_spi.o       112
+    stm32f10x_tim.o       748
+    user_gpio.o            76
+    user_rcc.o            136
+    user_spi.o            268
+    user_timer.o          124
+    ----------------------------------
+    Total:              2 924
+
+command line: [2]
+    ----------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    ----------------------------------
+    Total:                  8
+
+rt7M_tl.a: [4]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    vector_table_M.o       66
+    ----------------------------------
+    Total:                118
+
+shb_l.a: [5]
+    exit.o                 20
+    ----------------------------------
+    Total:                 20
+
+    Gaps                    6
+    Linker created               4 096
+--------------------------------------
+    Grand Total:        3 076    4 096
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x08000ba9         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x20000000          --   Gb  - Linker created -
+CSTACK$$Limit           0x20001000          --   Gb  - Linker created -
+GPIO_Init               0x08000631   0xc4  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_PinRemapConfig     0x08000701   0x8a  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_ResetBits          0x080006fb    0x6  Code  Gb  stm32f10x_gpio.o [1]
+GPIO_SetBits            0x080006f5    0x6  Code  Gb  stm32f10x_gpio.o [1]
+Gpio_User_Init          0x08000a61   0x4c  Code  Gb  user_gpio.o [1]
+LCD12864_CS             0x08000911   0x28  Code  Gb  OLED.o [1]
+NVIC_Init               0x08000b33   0x60  Code  Gb  misc.o [1]
+NVIC_PriorityGroupConfig
+                        0x08000b29    0xa  Code  Gb  misc.o [1]
+OLED_Init               0x08000961   0x3a  Code  Gb  OLED.o [1]
+OLED_WrCmd              0x0800093d   0x24  Code  Gb  OLED.o [1]
+RCC_APB1PeriphClockCmd  0x0800025d   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB1PeriphResetCmd  0x0800029d   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x0800023d   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_APB2PeriphResetCmd  0x0800027d   0x20  Code  Gb  stm32f10x_rcc.o [1]
+RCC_DeInit              0x08000041   0x78  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetFlagStatus       0x080002c3   0x3c  Code  Gb  stm32f10x_rcc.o [1]
+RCC_GetSYSCLKSource     0x080001ed    0xc  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HCLKConfig          0x080001f9   0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_HSEConfig           0x080000b9   0x54  Code  Gb  stm32f10x_rcc.o [1]
+RCC_MCOConfig           0x080002bd    0x6  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK1Config         0x0800020f   0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PCLK2Config         0x08000225   0x18  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLL2Cmd             0x080001ad    0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLL2Config          0x08000197   0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLL3Cmd             0x080001cd    0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLL3Config          0x080001b7   0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLCmd              0x0800015d    0xa  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PLLConfig           0x08000145   0x18  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PREDIV1Config       0x08000167   0x1a  Code  Gb  stm32f10x_rcc.o [1]
+RCC_PREDIV2Config       0x08000181   0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_SYSCLKConfig        0x080001d7   0x16  Code  Gb  stm32f10x_rcc.o [1]
+RCC_WaitForHSEStartUp   0x0800010d   0x38  Code  Gb  stm32f10x_rcc.o [1]
+Rcc_User_Init           0x080009d7   0x88  Code  Gb  user_rcc.o [1]
+Region$$Table$$Base     0x00000000          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00000000          --   Gb  - Linker created -
+SPI_Cmd                 0x080008df   0x1c  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_GetFlagStatus   0x080008ff   0x12  Code  Gb  stm32f10x_spi.o [1]
+SPI_I2S_SendData        0x080008fb    0x4  Code  Gb  stm32f10x_spi.o [1]
+SPI_Init                0x080008a1   0x3e  Code  Gb  stm32f10x_spi.o [1]
+SPI_Writebyte           0x080007a1   0x1e  Code  Gb  user_spi.o [1]
+Spi_Io_User_Config      0x080007bf   0x78  Code  Gb  user_spi.o [1]
+Spi_Reg_User_Config     0x08000837   0x54  Code  Gb  user_spi.o [1]
+Spi_User_Init           0x08000795    0xc  Code  Gb  user_spi.o [1]
+TIM_ClearFlag           0x080005e9    0x8  Code  Gb  stm32f10x_tim.o [1]
+TIM_Cmd                 0x080005b5   0x1c  Code  Gb  stm32f10x_tim.o [1]
+TIM_DeInit              0x08000345  0x1de  Code  Gb  stm32f10x_tim.o [1]
+TIM_ITConfig            0x080005d1   0x18  Code  Gb  stm32f10x_tim.o [1]
+TIM_TimeBaseInit        0x08000523   0x92  Code  Gb  stm32f10x_tim.o [1]
+Timer_User_Init         0x08000aad   0x7c  Code  Gb  user_timer.o [1]
+User_Init               0x0800099d   0x18  Code  Gb  application.o [1]
+__cmain                 0x08000ba9         Code  Gb  cmain.o [4]
+__exit                  0x08000be5   0x14  Code  Gb  exit.o [5]
+__iar_program_start     0x08000bf9         Code  Gb  cstartup_M.o [4]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__low_level_init        0x08000bc7    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  vector_table_M.o [4]
+_call_main              0x08000bb5         Code  Gb  cmain.o [4]
+_exit                   0x08000bd9         Code  Gb  cexit.o [4]
+_main                   0x08000bc3         Code  Gb  cmain.o [4]
+delay1ms                0x080009b5   0x22  Code  Gb  application.o [1]
+exit                    0x08000bd5    0x4  Code  Gb  exit.o [3]
+main                    0x08000bcd    0x8  Code  Gb  main.o [1]
+
+
+[1] = D:\工作\测试架\程序\测试架单片机程序\Project\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  3 076 bytes of readonly  code memory
+  4 096 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
